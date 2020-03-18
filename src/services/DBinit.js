@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const CONFIG = require('../config/keys');
 let MONGO_URL;
 if (process.env.NODE_ENV === 'production') {
-  const { MONGO_DBNAME, MONGO_PASSWORD, MONGO_USER } = CONFIG;
-  MONGO_URL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@ds213178.mlab.com:13178/${MONGO_DBNAME}`;
+  const { MONGO_DBNAME, MONGO_PASSWORD, MONGO_USER, MONGO_URL } = CONFIG;
+  MONGO_URL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_URL}/${MONGO_DBNAME}`;
 } else {
   const { MONGO_DBNAME } = CONFIG;
   MONGO_URL = `mongodb://localhost/${MONGO_DBNAME}`;
