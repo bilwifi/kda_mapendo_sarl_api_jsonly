@@ -7,14 +7,14 @@ const router = express.Router();
 router.get('/', async ({ query }, res) => {
   const clientKey = query.client_key;
   try {
-    const user = await UserModel.findOne({});
+    const user = await UserModel.findOne({ clientKey });
     if (user) {
       try {
         const employees = await EmployeeModel.find({ clientKey });
         if (employees) {
           return res.send(employees);
         } else {
-          return res.send('Employé non trouvé').status(404);
+          return res.send('Employés non trouvé').status(404);
         }
       } catch (error) {
         console.log(error);
@@ -37,7 +37,7 @@ router.get('/:id', async ({ query, params }, res) => {
       _id: params.id
     });
     if (employee) {
-      return res.send(employes);
+      return res.send(employee);
     } else {
       return res.send('Employé non trouvé').status(404);
     }
