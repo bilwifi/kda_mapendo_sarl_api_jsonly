@@ -5,7 +5,7 @@ const UserModel = require('../models/UserModel');
 const router = express.Router();
 
 router.get('/', async ({ query }, res) => {
-  const clientKey = query.client_key;
+  const clientKey = query.api_key;
   try {
     const user = await UserModel.findOne({ clientKey });
     if (user) {
@@ -30,7 +30,7 @@ router.get('/', async ({ query }, res) => {
 });
 
 router.get('/:id', async ({ query, params }, res) => {
-  const clientKey = query.client_key;
+  const clientKey = query.api_key;
   try {
     const employee = await EmployeeModel.findOne({
       clientKey,

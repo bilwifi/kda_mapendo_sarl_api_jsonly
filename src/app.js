@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api/employers', require('./routes/employees'));
+app.use('/api/employes', require('./routes/employees'));
 
 const PORT = 4000 || process.env.PORT;
 
