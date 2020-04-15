@@ -3,6 +3,7 @@ require('./services/DBinit');
 
 const app = express();
 
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/employes', require('./routes/employees'));
