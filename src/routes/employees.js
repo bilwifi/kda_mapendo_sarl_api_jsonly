@@ -1,5 +1,5 @@
 const express = require('express');
-const {Employee,validate} = require('../models/Employee');
+const {Employee,validate} = require('../models/employee');
 const User = require('../models/user.js');
 const _=require('lodash');
 
