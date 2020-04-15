@@ -77,7 +77,7 @@ router.post('/', async (req, res) => {
       'email',
       'dateNaissance',
       'poste',
-      'numerTelephone',
+      'numeroTelephone',
       'estMarie',
       'pays',
     ]);
@@ -109,7 +109,7 @@ router.put('/:id', async (req, res) => {
        'email',
        'dateNaissance',
        'poste',
-       'numerTelephone',
+       'numeroTelephone',
        'estMarie',
        'pays',
      ]);
